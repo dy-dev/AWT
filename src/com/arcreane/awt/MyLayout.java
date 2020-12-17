@@ -1,10 +1,7 @@
-package com.arcreane;
+package com.arcreane.awt;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
+import java.awt.event.*;
 
 public class MyLayout extends Frame {
 
@@ -65,40 +62,10 @@ public class MyLayout extends Frame {
         menuItem.addActionListener(l);
 
 
-        addWindowListener(new WindowListener() {
-            @Override
-            public void windowOpened(WindowEvent e) {
-
-            }
-
+        addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
                 System.exit(0);
-            }
-
-            @Override
-            public void windowClosed(WindowEvent e) {
-
-            }
-
-            @Override
-            public void windowIconified(WindowEvent e) {
-
-            }
-
-            @Override
-            public void windowDeiconified(WindowEvent e) {
-
-            }
-
-            @Override
-            public void windowActivated(WindowEvent e) {
-
-            }
-
-            @Override
-            public void windowDeactivated(WindowEvent e) {
-
             }
         });
 
@@ -106,11 +73,21 @@ public class MyLayout extends Frame {
         b1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+               doSomething(e);
             }
         });
-        b2.addActionListener(l);
-        b3.addActionListener(l);
+        b2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                doSomething(e);
+            }
+        });
+        b3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                doSomething(e);
+            }
+        });
         Panel pButton = insertElements(b1, b2);
         pButton.add(b3);
 
@@ -135,5 +112,8 @@ public class MyLayout extends Frame {
 
     }
 
+    public void doSomething(ActionEvent e){
+        System.out.println("I do something");
+    }
 
 }

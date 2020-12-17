@@ -1,6 +1,5 @@
-package com.arcreane;
+package com.arcreane.awt;
 
-import org.w3c.dom.Text;
 import java.awt.*;
 public class Thomas extends  Frame{
     public Thomas(String s) {

@@ -1,4 +1,4 @@
-package com.arcreane;
+package com.arcreane.awt;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
