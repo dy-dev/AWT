@@ -10,7 +10,7 @@ public class JTout extends JFrame {
         JTout tout = new JTout();
     }
 
-    public JTout(){
+    public JTout() {
         super("Mon Frame");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -48,9 +48,17 @@ public class JTout extends JFrame {
         RadioButtonPanel.setLayout(new BoxLayout(RadioButtonPanel, BoxLayout.X_AXIS));
         RadioButtonPanel.setBorder(new TitledBorder("Radio butons"));
         RadioButtonPanel.add(Box.createHorizontalStrut(5));
-        RadioButtonPanel.add(new JCheckBox("Toto"));
-        RadioButtonPanel.add(new JCheckBox("Titi"));
-        RadioButtonPanel.add(new JCheckBox("Tata"));
+
+        ButtonGroup radioGroup = new ButtonGroup();
+        JRadioButton toto = new JRadioButton("Toto");
+        JRadioButton titi = new JRadioButton("Titi");
+        JRadioButton tata = new JRadioButton("Tata");
+        radioGroup.add(toto);
+        radioGroup.add(titi);
+        radioGroup.add(tata);
+        RadioButtonPanel.add(toto);
+        RadioButtonPanel.add(titi);
+        RadioButtonPanel.add(tata);
         panneau.add(RadioButtonPanel);
         panneau.add(Box.createVerticalStrut(5));
 
@@ -63,8 +71,6 @@ public class JTout extends JFrame {
         ButtonPanel.add(new JButton("Tata"));
         panneau.add(ButtonPanel);
         panneau.add(Box.createVerticalStrut(5));
-
-
 
 
         pack();
@@ -92,8 +98,6 @@ public class JTout extends JFrame {
         panneau.add(TextfieldPanel);
         panneau.add(Box.createVerticalStrut(5));
     }
-
-
 }
 
 
